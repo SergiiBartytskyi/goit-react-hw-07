@@ -21,6 +21,10 @@ const FeedbackSchema = Yup.object().shape({
     .required("Required"),
 });
 
+// const enum initialValues = {
+//   name = "";
+//   number = "";
+// };
 interface FormValues {
   name: string;
   number: string;
@@ -32,12 +36,18 @@ const ContactForm = () => {
   const userNumber = useId();
 
   const handleSubmit = (values: FormValues, actions: any) => {
-    dispatch(addContact(values));
+    // dispatch(addContact(values));
+    const newContact = {
+      ...values,
+      id: new Date().toISOString(),
+    };
+
+    dispatch(addContact(newContact));
     actions.resetForm();
   };
 
   return (
-    <Formik
+    <Formik<FormValues>
       initialValues={{ name: "", number: "" }}
       onSubmit={handleSubmit}
       validationSchema={FeedbackSchema}

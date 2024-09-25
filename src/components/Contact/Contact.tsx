@@ -1,7 +1,6 @@
 import { FC } from "react";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { useAppDispatch } from "../../redux/hooks";
 import { Contact as ContactType } from "../../redux/types/contacts";
-// import { useDispatch } from "react-redux";
 import { deleteContact } from "../../redux/contactsOps";
 import { IoPersonOutline, IoPhonePortraitOutline } from "react-icons/io5";
 import css from "./Contact.module.css";

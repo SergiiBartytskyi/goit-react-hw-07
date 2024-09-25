@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { useAppSelector } from "../../redux/hooks";
-// import { useSelector } from "react-redux";
 import Contact from "../Contact/Contact";
 import { selectFilteredContacts } from "../../redux/contactsSlice";
 import css from "./ContactList.module.css";
