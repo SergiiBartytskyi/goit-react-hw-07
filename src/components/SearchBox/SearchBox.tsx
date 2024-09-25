@@ -1,15 +1,17 @@
-import { useSelector, useDispatch } from "react-redux";
+import { FC, ChangeEvent } from "react";
+// import { useSelector, useDispatch } from "react-redux";
+import { useAppSelector, useAppDispatch } from "../../redux/hooks";
 import { selectNameFilter } from "../../redux/filtersSlice";
 import { changeFilter } from "../../redux/filtersSlice";
 import { useId } from "react";
 import css from "./SearchBox.module.css";
 
-export default function SearchBox() {
+const SearchBox: FC = () => {
   const searchId = useId();
-  const dispatch = useDispatch();
-  const filter = useSelector(selectNameFilter);
+  const dispatch = useAppDispatch();
+  const filter = useAppSelector(selectNameFilter);
 
-  const handleFilterChange = (e) => {
+  const handleFilterChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch(changeFilter(e.target.value));
   };
 
@@ -25,4 +27,6 @@ export default function SearchBox() {
       />
     </form>
   );
-}
+};
+
+export default SearchBox;
