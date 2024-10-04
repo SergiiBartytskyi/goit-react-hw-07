@@ -14,7 +14,7 @@ import "./index.css";
 //   </StrictMode>
 // );
 
-createRoot(document.getElementById("root")!).render(
+createRoot(document.getElementById("root") as HTMLElement).render(
   <StrictMode>
     <Provider store={store}>
       <App />
