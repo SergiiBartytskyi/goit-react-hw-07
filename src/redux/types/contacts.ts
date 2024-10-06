@@ -5,7 +5,7 @@ export type Contact = {
 };
 
 export type ContactsState = {
-  items: Array<Contact>;
+  items: Contact[];
   loading: boolean;
   error: string | null;
 };
